@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter drop</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(245, 201, 147);
+            margin: 0%;
+            height: 100vh;
+        }
+        
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            /* for 3d design*/
+            transform: rotateX(30deg) rotateY(120deg);
+        }
+        
+        .side1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(220, 110, 110);
+            transform: translateZ(100px);
+        }
+        
+        .side2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(246, 71, 71);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        .side3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(164, 46, 42);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        .input-side {
+            width: 50px;
+            height: 100px;
+            background-color: rgb(226, 186, 186);
+            border-radius: 10px;
+            border: 2px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .letter {
+            width: 100px;
+            height: 130px;
+            background-color: rgb(128, 195, 240);
+            position: absolute;
+            transform: translateZ(100px);
+            top: 10%;
+            left: 47%;
+            display: grid;
+            place-items: center;
+            animation: drop 3s ease-in-out forwards infinite;
+        }
+        
+        @keyframes drop {
+            0% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(50vh);
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="side1"></div>
+        <div class="side2"></div>
+        <div class="side3">
+            <div class="input-side"></div>
+        </div>
+    </div>
+    <div class="letter"> LETTER</div>
+
+</body>
+
+</html>
